@@ -15,7 +15,7 @@ describe 'Array basics' do
   end
 
   it "can create a new array where 'raspberries' is between apples and oranges" do
-		new_array = fruit.dup  # Why can't you just do new_array = fruit, as with, e.g., a variable set to an integer value? Because fruit is a symbol? Because it's an array?
+    new_array = fruit.dup  # Why can't you just do new_array = fruit, as with, e.g., a variable set to an integer value? Because fruit is a symbol? Because it's an array?
     new_array = new_array.insert(new_array.index("oranges"), "raspberries")
     expect( new_array ).to be == ['apples', 'raspberries', 'oranges', 'bananas', 'pomegranates', 'grapes']
     expect(fruit.count).to be == 5
@@ -23,7 +23,7 @@ describe 'Array basics' do
 
   it "can report the length of each string in the array" do
     lengths = fruit.dup.insert(1,"raspberries")
-		lengths = lengths.map {|a| a.length }
+    lengths = lengths.map {|a| a.length }
     expect( lengths ).to be == [6, 11, 7, 7, 12, 6]
   end
 

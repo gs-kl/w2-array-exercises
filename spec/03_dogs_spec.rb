@@ -16,7 +16,7 @@ describe "Array basics, part 3" do
 
   it "returns an array of the lengths of each dog name" do
     dog_name_counts = dogs.dup.map {|a| a.length}
-		expect(dog_name_counts).to be == [4, 8, 4, 6, 4, 7]
+    expect(dog_name_counts).to be == [4, 8, 4, 6, 4, 7]
   end
 
   it "returns each of the names reversed" do
@@ -36,8 +36,8 @@ describe "Array basics, part 3" do
 
   it "returns a sum of the lengths of each of the names" do
     sum_of_name_lengths = 0
-		dogs.each {|a| sum_of_name_lengths = sum_of_name_lengths + a.length } 
-    expect(sum_of_name_lengths).to be == 33
+    dogs.each {|a| sum_of_name_lengths = sum_of_name_lengths + a.length } 
+    expect(sum_of_name_lengths).to be == 3
   end
 
   it "returns all the dogs whose names are longer that 4 characters" do
