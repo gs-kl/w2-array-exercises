@@ -16,33 +16,28 @@ describe "Tic Tac Toe, in arrays" do
 
   describe "counting usage per row" do
     it "returns how many times X was played in each row" do
-      xs_per_row = [data[0].count("X"), data[1].count("X"), data[2].count("X")]
+      xs_per_row = data.map {|a| a.count("X")}
       expect(xs_per_row).to be == [1, 2, 1]
     end
 
     it "returns how many times O was played in each row" do
-      os_per_row = [data[0].count("O"), data[1].count("O"), data[2].count("O")]
+      os_per_row = data.map {|a| a.count("O")}
       expect(os_per_row).to be == [2, 1, 2]
     end
   end
 
   describe "getting coordinates of usage" do
     it "returns an array of [row, column] array coordinates for each usage of X" do
-      
       def getcoordinates inputletter 
         coordinates = []
         for rownumber in 0..2
           data[rownumber].each_with_index do |a, i|
-            if a == inputletter
-              coordinates.push([rownumber, i])
-            end
+            coordinates.push([rownumber, i]) if a == inputletter
           end
         end
         coordinates
       end
-
       x_coordinates = getcoordinates "X"
-
      expect(x_coordinates).to be == [[0, 0], [1, 0], [1, 1], [2, 1]]
     end
 
@@ -51,16 +46,12 @@ describe "Tic Tac Toe, in arrays" do
         coordinates = []
         for rownumber in 0..2
           data[rownumber].each_with_index do |a, i|
-            if a == inputletter
-              coordinates.push([rownumber, i])
-            end
+            coordinates.push([rownumber, i]) if a == inputletter
           end
         end
         coordinates
       end
-
       o_coordinates = getcoordinates "O"
-
      expect(o_coordinates).to be == [[0, 1], [0, 2], [1, 2], [2, 0], [2, 2]]
     end
   end
