@@ -37,7 +37,7 @@ describe "Array basics, part 3" do
   it "returns a sum of the lengths of each of the names" do
     sum_of_name_lengths = 0
     dogs.each {|a| sum_of_name_lengths = sum_of_name_lengths + a.length } 
-    expect(sum_of_name_lengths).to be == 3
+    expect(sum_of_name_lengths).to be == 33
   end
 
   it "returns all the dogs whose names are longer that 4 characters" do
