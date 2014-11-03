@@ -28,30 +28,12 @@ describe "Tic Tac Toe, in arrays" do
 
   describe "getting coordinates of usage" do
     it "returns an array of [row, column] array coordinates for each usage of X" do
-      def getcoordinates inputletter 
-        coordinates = []
-        for rownumber in 0..2
-          data[rownumber].each_with_index do |a, i|
-            coordinates.push([rownumber, i]) if a == inputletter
-          end
-        end
-        coordinates
-      end
-      x_coordinates = getcoordinates "X"
+     x_coordinates = get_coordinates "X"
      expect(x_coordinates).to be == [[0, 0], [1, 0], [1, 1], [2, 1]]
     end
 
     it "returns an array of [row, column] array coordinates for each usage of O" do
-      def getcoordinates inputletter 
-        coordinates = []
-        for rownumber in 0..2
-          data[rownumber].each_with_index do |a, i|
-            coordinates.push([rownumber, i]) if a == inputletter
-          end
-        end
-        coordinates
-      end
-      o_coordinates = getcoordinates "O"
+      o_coordinates = get_coordinates "O"
      expect(o_coordinates).to be == [[0, 1], [0, 2], [1, 2], [2, 0], [2, 2]]
     end
   end
